@@ -22,12 +22,33 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "amount": MessageLookupByLibrary.simpleMessage("Amount"),
+        "cancelTransaction":
+            MessageLookupByLibrary.simpleMessage("Cancel transaction"),
+        "chart": MessageLookupByLibrary.simpleMessage("Chart"),
         "checkYourTransactions":
             MessageLookupByLibrary.simpleMessage("Check your transactions"),
+        "dataIsNotAvailable":
+            MessageLookupByLibrary.simpleMessage("Data is not available"),
+        "date": MessageLookupByLibrary.simpleMessage("Date"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "fee": MessageLookupByLibrary.simpleMessage("Fee"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "replenishment": MessageLookupByLibrary.simpleMessage("Replenishment"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
-        "transactions": MessageLookupByLibrary.simpleMessage("Transactions")
+        "theTransactionListIsEmpty": MessageLookupByLibrary.simpleMessage(
+            "The transaction list is empty"),
+        "total": MessageLookupByLibrary.simpleMessage("Total"),
+        "totalTransactionsAmount":
+            MessageLookupByLibrary.simpleMessage("Total transactions amount"),
+        "transactionDetails":
+            MessageLookupByLibrary.simpleMessage("Transaction details"),
+        "transactionNumber":
+            MessageLookupByLibrary.simpleMessage("Transaction number"),
+        "transactions": MessageLookupByLibrary.simpleMessage("Transactions"),
+        "transfer": MessageLookupByLibrary.simpleMessage("Transfer"),
+        "type": MessageLookupByLibrary.simpleMessage("Type"),
+        "withdrawal": MessageLookupByLibrary.simpleMessage("Withdrawal")
       };
 }

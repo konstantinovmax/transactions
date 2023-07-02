@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:transactions/common/utils/app_colors.dart';
+import 'package:transactions/common/utils/app_routes.dart';
 import 'package:transactions/modules/splash_screen_module/components/animated_logo_widget.dart';
-import 'package:transactions/utils/app_colors.dart';
-import 'package:transactions/utils/app_routes.dart';
 
 class SplashScreenView extends StatefulWidget {
   const SplashScreenView({super.key});

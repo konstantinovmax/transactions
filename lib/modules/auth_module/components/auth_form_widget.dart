@@ -4,11 +4,11 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:transactions/common/components/app_input_widget.dart';
 import 'package:transactions/common/components/app_title_widget.dart';
+import 'package:transactions/common/redux/actions/auth_actions.dart';
+import 'package:transactions/common/redux/states/app_state.dart';
+import 'package:transactions/common/utils/app_sizes.dart';
 import 'package:transactions/l10n/generated/l10n.dart';
 import 'package:transactions/modules/auth_module/components/auth_form_submit_button_widget.dart';
-import 'package:transactions/redux/actions/auth_actions.dart';
-import 'package:transactions/redux/states/app_state.dart';
-import 'package:transactions/utils/app_sizes.dart';
 
 class AuthFormWidget extends StatelessWidget {
   const AuthFormWidget({super.key});

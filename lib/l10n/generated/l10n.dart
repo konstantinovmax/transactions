@@ -109,6 +109,156 @@ class AppLocalization {
       args: [],
     );
   }
+
+  /// `Replenishment`
+  String get replenishment {
+    return Intl.message(
+      'Replenishment',
+      name: 'replenishment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Transfer`
+  String get transfer {
+    return Intl.message(
+      'Transfer',
+      name: 'transfer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Withdrawal`
+  String get withdrawal {
+    return Intl.message(
+      'Withdrawal',
+      name: 'withdrawal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chart`
+  String get chart {
+    return Intl.message(
+      'Chart',
+      name: 'chart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total`
+  String get total {
+    return Intl.message(
+      'Total',
+      name: 'total',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total transactions amount`
+  String get totalTransactionsAmount {
+    return Intl.message(
+      'Total transactions amount',
+      name: 'totalTransactionsAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Transaction details`
+  String get transactionDetails {
+    return Intl.message(
+      'Transaction details',
+      name: 'transactionDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel transaction`
+  String get cancelTransaction {
+    return Intl.message(
+      'Cancel transaction',
+      name: 'cancelTransaction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date`
+  String get date {
+    return Intl.message(
+      'Date',
+      name: 'date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amount`
+  String get amount {
+    return Intl.message(
+      'Amount',
+      name: 'amount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fee`
+  String get fee {
+    return Intl.message(
+      'Fee',
+      name: 'fee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Transaction number`
+  String get transactionNumber {
+    return Intl.message(
+      'Transaction number',
+      name: 'transactionNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type`
+  String get type {
+    return Intl.message(
+      'Type',
+      name: 'type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The transaction list is empty`
+  String get theTransactionListIsEmpty {
+    return Intl.message(
+      'The transaction list is empty',
+      name: 'theTransactionListIsEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Data is not available`
+  String get dataIsNotAvailable {
+    return Intl.message(
+      'Data is not available',
+      name: 'dataIsNotAvailable',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {

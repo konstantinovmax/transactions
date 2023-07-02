@@ -1,7 +1,7 @@
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:redux/redux.dart';
-import 'package:transactions/redux/actions/auth_actions.dart';
-import 'package:transactions/redux/states/auth_state.dart';
+import 'package:transactions/common/redux/actions/auth_actions.dart';
+import 'package:transactions/common/redux/states/auth_state.dart';
 
 final authReducer = combineReducers<AuthState>([
   TypedReducer<AuthState, UpdateEmailInput>(_updateEmail),
