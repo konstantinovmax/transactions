@@ -1,3 +1,8 @@
 {
-  "transactions": "Transactions"
+  "transactions": "Transactions",
+  "login": "Login",
+  "send": "Send",
+  "email": "Email",
+  "password": "Password",
+  "checkYourTransactions": "Check your transactions"
 }
