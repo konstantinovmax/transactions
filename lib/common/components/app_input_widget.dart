@@ -66,6 +66,7 @@ class AppInputWidget extends StatelessWidget {
         SizedBox(
           height: inputHeight,
           child: FormBuilderTextField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             validator: validator,
             name: name,
             decoration: InputDecoration(

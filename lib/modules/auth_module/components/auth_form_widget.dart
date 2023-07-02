@@ -10,15 +10,8 @@ import 'package:transactions/redux/actions/auth_actions.dart';
 import 'package:transactions/redux/states/app_state.dart';
 import 'package:transactions/utils/app_sizes.dart';
 
-class AuthFormWidget extends StatefulWidget {
+class AuthFormWidget extends StatelessWidget {
   const AuthFormWidget({super.key});
-
-  @override
-  State<AuthFormWidget> createState() => _AuthFormWidgetState();
-}
-
-class _AuthFormWidgetState extends State<AuthFormWidget> {
-  final _formKey = GlobalKey<FormBuilderState>();
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +19,6 @@ class _AuthFormWidgetState extends State<AuthFormWidget> {
     final storeProvider = StoreProvider.of<AppState>(context);
 
     return FormBuilder(
-      key: _formKey,
-      onChanged: () {
-        if (_formKey.currentState != null) {
-          storeProvider.dispatch(
-            UpdateFormValidity(isFormValid: _formKey.currentState!.validate()),
-          );
-        }
-      },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -46,7 +31,9 @@ class _AuthFormWidgetState extends State<AuthFormWidget> {
             title: appLocalization.email,
             name: 'login_input',
             hintText: 'test@test.com',
-            onChanged: (value) {},
+            onChanged: (value) {
+              storeProvider.dispatch(UpdateEmailInput(email: value ?? ''));
+            },
             keyboardType: TextInputType.text,
             obscureText: false,
             maxLines: 1,
@@ -63,7 +50,10 @@ class _AuthFormWidgetState extends State<AuthFormWidget> {
             title: appLocalization.password,
             hintText: '********',
             name: 'password_input',
-            onChanged: (value) {},
+            onChanged: (value) {
+              storeProvider
+                  .dispatch(UpdatePasswordInput(password: value ?? ''));
+            },
             keyboardType: TextInputType.visiblePassword,
             obscureText: true,
             maxLines: 1,
