@@ -29,7 +29,7 @@ class _SplashScreenViewState extends State<SplashScreenView>
         if (status == AnimationStatus.completed) {
           Navigator.pushNamedAndRemoveUntil(
             context,
-            AppRoutes.transactionsRoute,
+            AppRoutes.authRoute,
             (route) => false,
           );
         }
@@ -47,7 +47,7 @@ class _SplashScreenViewState extends State<SplashScreenView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.grey,
+      backgroundColor: AppColors.lightGrey,
       body: Center(
         child: AnimatedBuilder(
           animation: animationController,
