@@ -18,5 +18,6 @@
   "fee": "Fee",
   "transactionNumber": "Transaction number",
   "type": "Type",
-  "theTransactionListIsEmpty": "The transaction list is empty"
+  "theTransactionListIsEmpty": "The transaction list is empty",
+  "dataIsNotAvailable": "Data is not available"
 }

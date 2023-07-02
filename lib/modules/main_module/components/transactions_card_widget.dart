@@ -41,7 +41,7 @@ class TransactionsCardWidget extends StatelessWidget {
             vertical: 10.0,
           ),
           decoration: BoxDecoration(
-            color: transactionTypeInfo.backgroundColor,
+            color: transactionTypeInfo.backgroundColor.withOpacity(0.05),
             borderRadius: const BorderRadius.all(
               Radius.circular(8.0),
             ),

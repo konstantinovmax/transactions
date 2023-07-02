@@ -24,8 +24,8 @@ class TransactionDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     final appLocalization = AppLocalization.of(context);
     final dateFormat = DateFormat('HH:mm, dd.MM.yyyy');
-    final isPhone =
-        MediaQuery.of(context).size.width <= AppConstants.maxPhoneWidth;
+    final mediaQuery = MediaQuery.of(context);
+    final isPhone = mediaQuery.size.width <= AppConstants.maxPhoneWidth;
     final storeProvider = StoreProvider.of<AppState>(context);
     final transactionDate = dateFormat.format(transaction.date);
     final transactionTypeInfo =

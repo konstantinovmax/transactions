@@ -26,28 +26,28 @@ TransactionTypeInfo onGetTransactionTypeInfo(
   switch (type) {
     case TransactionType.replenishment:
       return TransactionTypeInfo(
-        backgroundColor: AppColors.lightGreen.withOpacity(0.1),
+        backgroundColor: AppColors.green,
         icon: AppAssets.replenishmentIcon,
         transactionName: appLocalization.replenishment,
         amountTextStyle: AppTextStyles.text17BoldGreen,
       );
     case TransactionType.withdrawal:
       return TransactionTypeInfo(
-        backgroundColor: AppColors.red.withOpacity(0.03),
+        backgroundColor: AppColors.red,
         icon: AppAssets.withdrawalIcon,
         transactionName: appLocalization.withdrawal,
         amountTextStyle: AppTextStyles.text17BoldBlackWithOpacity50,
       );
     case TransactionType.transfer:
       return TransactionTypeInfo(
-        backgroundColor: AppColors.yellow.withOpacity(0.05),
+        backgroundColor: AppColors.yellow,
         icon: AppAssets.transferIcon,
         transactionName: appLocalization.transfer,
         amountTextStyle: AppTextStyles.text17BoldBlackWithOpacity50,
       );
     default:
       return TransactionTypeInfo(
-        backgroundColor: AppColors.yellow.withOpacity(0.05),
+        backgroundColor: AppColors.yellow,
         icon: AppAssets.transferIcon,
         transactionName: appLocalization.transfer,
         amountTextStyle: AppTextStyles.text17BoldBlackWithOpacity50,

@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "chart": MessageLookupByLibrary.simpleMessage("Chart"),
         "checkYourTransactions":
             MessageLookupByLibrary.simpleMessage("Check your transactions"),
+        "dataIsNotAvailable":
+            MessageLookupByLibrary.simpleMessage("Data is not available"),
         "date": MessageLookupByLibrary.simpleMessage("Date"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "fee": MessageLookupByLibrary.simpleMessage("Fee"),

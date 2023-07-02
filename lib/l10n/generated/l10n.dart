@@ -249,6 +249,16 @@ class AppLocalization {
       args: [],
     );
   }
+
+  /// `Data is not available`
+  String get dataIsNotAvailable {
+    return Intl.message(
+      'Data is not available',
+      name: 'dataIsNotAvailable',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {

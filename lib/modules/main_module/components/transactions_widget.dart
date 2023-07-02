@@ -15,9 +15,8 @@ class TransactionsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appLocalization = AppLocalization.of(context);
-    final isPhone =
-        MediaQuery.of(context).size.width <= AppConstants.maxPhoneWidth;
     final mediaQuery = MediaQuery.of(context);
+    final isPhone = mediaQuery.size.width <= AppConstants.maxPhoneWidth;
 
     return SingleChildScrollView(
       padding: EdgeInsets.all(
