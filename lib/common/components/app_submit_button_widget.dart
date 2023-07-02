@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:transactions/utils/app_colors.dart';
-import 'package:transactions/utils/app_text_styles.dart';
+import 'package:transactions/common/utils/app_colors.dart';
+import 'package:transactions/common/utils/app_text_styles.dart';
 
 class AppSubmitButtonWidget extends StatelessWidget {
   final String title;

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:transactions/common/components/app_submit_button_widget.dart';
+import 'package:transactions/common/redux/states/app_state.dart';
+import 'package:transactions/common/redux/states/auth_state.dart';
+import 'package:transactions/common/utils/app_routes.dart';
 import 'package:transactions/l10n/generated/l10n.dart';
-import 'package:transactions/redux/states/app_state.dart';
-import 'package:transactions/redux/states/auth_state.dart';
 
 class AuthFormSubmitButtonWidget extends StatelessWidget {
   const AuthFormSubmitButtonWidget({super.key});
@@ -17,7 +18,15 @@ class AuthFormSubmitButtonWidget extends StatelessWidget {
       builder: (context, authState) {
         return AppSubmitButtonWidget(
           title: appLocalization.login,
-          onPressed: authState.isFormValid ? () {} : null,
+          onPressed: authState.isFormValid
+              ? () {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    AppRoutes.transactionsRoute,
+                    (route) => false,
+                  );
+                }
+              : null,
         );
       },
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:transactions/utils/app_colors.dart';
-import 'package:transactions/utils/app_fonts.dart';
+import 'package:transactions/common/utils/app_colors.dart';
+import 'package:transactions/common/utils/app_fonts.dart';
 
 class AppTextStyles {
   static TextStyle text10RegularBlack = const TextStyle(
@@ -67,6 +67,14 @@ class AppTextStyles {
     color: AppColors.black.withOpacity(0.3),
   );
 
+  static TextStyle text15BoldBlackWithOpacity30 = TextStyle(
+    fontFamily: AppFonts.font1,
+    fontWeight: FontWeight.w700,
+    fontSize: 15.0,
+    height: 1.7,
+    color: AppColors.black.withOpacity(0.3),
+  );
+
   static TextStyle text17RegularBlack = const TextStyle(
     fontFamily: AppFonts.font1,
     fontWeight: FontWeight.w400,
@@ -97,6 +105,22 @@ class AppTextStyles {
     fontSize: 17.0,
     height: 1.7,
     color: AppColors.lightGreen,
+  );
+
+  static TextStyle text17BoldGreen = const TextStyle(
+    fontFamily: AppFonts.font1,
+    fontWeight: FontWeight.w700,
+    fontSize: 17.0,
+    height: 1.7,
+    color: AppColors.green,
+  );
+
+  static TextStyle text17BoldWhite = const TextStyle(
+    fontFamily: AppFonts.font1,
+    fontWeight: FontWeight.w700,
+    fontSize: 17.0,
+    height: 1.7,
+    color: AppColors.white,
   );
 
   static TextStyle text20RegularGreen = const TextStyle(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:transactions/utils/app_colors.dart';
-import 'package:transactions/utils/app_sizes.dart';
-import 'package:transactions/utils/app_text_styles.dart';
+import 'package:transactions/common/utils/app_colors.dart';
+import 'package:transactions/common/utils/app_sizes.dart';
+import 'package:transactions/common/utils/app_text_styles.dart';
 
 class AppInputWidget extends StatelessWidget {
   final double? inputHeight;

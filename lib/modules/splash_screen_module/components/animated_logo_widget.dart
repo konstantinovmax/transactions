@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:transactions/common/utils/app_text_styles.dart';
 import 'package:transactions/l10n/generated/l10n.dart';
-import 'package:transactions/utils/app_text_styles.dart';
 
 class AnimatedLogoWidget extends StatelessWidget {
   final double offsetValue;

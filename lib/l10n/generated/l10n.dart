@@ -109,6 +109,56 @@ class AppLocalization {
       args: [],
     );
   }
+
+  /// `Replenishment`
+  String get replenishment {
+    return Intl.message(
+      'Replenishment',
+      name: 'replenishment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Transfer`
+  String get transfer {
+    return Intl.message(
+      'Transfer',
+      name: 'transfer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Withdrawal`
+  String get withdrawal {
+    return Intl.message(
+      'Withdrawal',
+      name: 'withdrawal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chart`
+  String get chart {
+    return Intl.message(
+      'Chart',
+      name: 'chart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total`
+  String get total {
+    return Intl.message(
+      'Total',
+      name: 'total',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:transactions/common/utils/app_colors.dart';
+import 'package:transactions/common/utils/app_constants.dart';
+import 'package:transactions/common/utils/app_text_styles.dart';
 import 'package:transactions/l10n/generated/l10n.dart';
 import 'package:transactions/modules/auth_module/components/auth_form_widget.dart';
-import 'package:transactions/utils/app_colors.dart';
-import 'package:transactions/utils/app_text_styles.dart';
 
 class AuthView extends StatelessWidget {
   const AuthView({super.key});
@@ -10,7 +11,8 @@ class AuthView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appLocalization = AppLocalization.of(context);
-    final isPhone = MediaQuery.of(context).size.width <= 600;
+    final isPhone =
+        MediaQuery.of(context).size.width <= AppConstants.maxPhoneWidth;
 
     return Scaffold(
       backgroundColor: AppColors.lightGrey,
@@ -25,7 +27,9 @@ class AuthView extends StatelessWidget {
       ),
       body: Center(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(isPhone ? 20.0 : 60.0),
+          padding: EdgeInsets.all(
+            isPhone ? AppConstants.phonePadding : AppConstants.tabletPadding,
+          ),
           child: const AuthFormWidget(),
         ),
       ),

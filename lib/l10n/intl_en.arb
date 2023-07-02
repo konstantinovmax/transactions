@@ -4,5 +4,10 @@
   "send": "Send",
   "email": "Email",
   "password": "Password",
-  "checkYourTransactions": "Check your transactions"
+  "checkYourTransactions": "Check your transactions",
+  "replenishment": "Replenishment",
+  "transfer": "Transfer",
+  "withdrawal": "Withdrawal",
+  "chart": "Chart",
+  "total": "Total"
 }

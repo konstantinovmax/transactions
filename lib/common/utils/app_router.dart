@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:transactions/common/utils/app_routes.dart';
 import 'package:transactions/modules/auth_module/views/auth/auth_page.dart';
 import 'package:transactions/modules/main_module/views/transaction_details/transaction_details_page.dart';
 import 'package:transactions/modules/main_module/views/transactions/transactions_page.dart';
 import 'package:transactions/modules/splash_screen_module/views/splash_screen/splash_screen_page.dart';
-import 'package:transactions/utils/app_routes.dart';
 
 class AppRouter {
   static Route<Widget> onGenerateRoute(RouteSettings settings) {
