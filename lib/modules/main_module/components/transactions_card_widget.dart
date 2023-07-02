@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:transactions/common/utils/app_assets.dart';
 import 'package:transactions/common/utils/app_colors.dart';
+import 'package:transactions/common/utils/app_routes.dart';
 import 'package:transactions/common/utils/app_sizes.dart';
 import 'package:transactions/common/utils/app_text_styles.dart';
 import 'package:transactions/l10n/generated/l10n.dart';
@@ -11,19 +11,28 @@ import 'package:transactions/modules/main_module/models/transaction_type_info.da
 class TransactionsCardWidget extends StatelessWidget {
   final Transaction transaction;
 
-  const TransactionsCardWidget({super.key, required this.transaction});
+  const TransactionsCardWidget({
+    super.key,
+    required this.transaction,
+  });
 
   @override
   Widget build(BuildContext context) {
     final appLocalization = AppLocalization.of(context);
     final transactionTypeInfo =
-        getTransactionTypeInfo(transaction.type, appLocalization);
+        onGetTransactionTypeInfo(transaction.type, appLocalization);
 
     return InkWell(
       borderRadius: const BorderRadius.all(
         Radius.circular(8.0),
       ),
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          AppRoutes.transactionDetailsRoute,
+          arguments: transaction,
+        );
+      },
       child: AspectRatio(
         aspectRatio: 10 / 2,
         child: Container(
@@ -79,7 +88,7 @@ class TransactionsCardWidget extends StatelessWidget {
                 ],
               ),
               Text(
-                transaction.total.toString(),
+                '${transaction.total} \$',
                 style: transactionTypeInfo.amountTextStyle,
               ),
             ],
@@ -87,41 +96,5 @@ class TransactionsCardWidget extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  TransactionTypeInfo getTransactionTypeInfo(
-    TransactionType type,
-    AppLocalization appLocalization,
-  ) {
-    switch (type) {
-      case TransactionType.replenishment:
-        return TransactionTypeInfo(
-          backgroundColor: AppColors.lightGreen.withOpacity(0.1),
-          icon: AppAssets.replenishmentIcon,
-          transactionName: appLocalization.replenishment,
-          amountTextStyle: AppTextStyles.text17BoldGreen,
-        );
-      case TransactionType.withdrawal:
-        return TransactionTypeInfo(
-          backgroundColor: AppColors.red.withOpacity(0.03),
-          icon: AppAssets.withdrawalIcon,
-          transactionName: appLocalization.withdrawal,
-          amountTextStyle: AppTextStyles.text17BoldBlackWithOpacity50,
-        );
-      case TransactionType.transfer:
-        return TransactionTypeInfo(
-          backgroundColor: AppColors.yellow.withOpacity(0.05),
-          icon: AppAssets.transferIcon,
-          transactionName: appLocalization.transfer,
-          amountTextStyle: AppTextStyles.text17BoldBlackWithOpacity50,
-        );
-      default:
-        return TransactionTypeInfo(
-          backgroundColor: AppColors.yellow.withOpacity(0.05),
-          icon: AppAssets.transferIcon,
-          transactionName: appLocalization.transfer,
-          amountTextStyle: AppTextStyles.text17BoldBlackWithOpacity50,
-        );
-    }
   }
 }

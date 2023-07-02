@@ -4,20 +4,22 @@ import 'package:transactions/common/utils/app_text_styles.dart';
 
 class AppSubmitButtonWidget extends StatelessWidget {
   final String title;
+  final Color color;
   final void Function()? onPressed;
 
   const AppSubmitButtonWidget({
     super.key,
     required this.title,
+    required this.color,
     required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        color: AppColors.green,
-        borderRadius: BorderRadius.all(
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: const BorderRadius.all(
           Radius.circular(8.0),
         ),
       ),

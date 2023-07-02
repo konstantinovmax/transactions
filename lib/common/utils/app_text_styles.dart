@@ -123,6 +123,14 @@ class AppTextStyles {
     color: AppColors.white,
   );
 
+  static TextStyle text17RegularBlackWithOpacity50 = TextStyle(
+    fontFamily: AppFonts.font1,
+    fontWeight: FontWeight.w400,
+    fontSize: 17.0,
+    height: 1.7,
+    color: AppColors.black.withOpacity(0.5),
+  );
+
   static TextStyle text17BoldBlackWithOpacity50 = TextStyle(
     fontFamily: AppFonts.font1,
     fontWeight: FontWeight.w700,

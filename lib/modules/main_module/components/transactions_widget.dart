@@ -5,6 +5,8 @@ import 'package:transactions/common/redux/states/transactions_state.dart';
 import 'package:transactions/common/redux/store.dart';
 import 'package:transactions/common/utils/app_constants.dart';
 import 'package:transactions/common/utils/app_sizes.dart';
+import 'package:transactions/common/utils/app_text_styles.dart';
+import 'package:transactions/l10n/generated/l10n.dart';
 import 'package:transactions/modules/main_module/components/transactions_card_widget.dart';
 
 class TransactionsWidget extends StatelessWidget {
@@ -12,8 +14,10 @@ class TransactionsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appLocalization = AppLocalization.of(context);
     final isPhone =
         MediaQuery.of(context).size.width <= AppConstants.maxPhoneWidth;
+    final mediaQuery = MediaQuery.of(context);
 
     return SingleChildScrollView(
       padding: EdgeInsets.all(
@@ -22,6 +26,18 @@ class TransactionsWidget extends StatelessWidget {
       child: StoreConnector<AppState, TransactionsState>(
         converter: (state) => store.state.transactionsState,
         builder: (context, transactionsState) {
+          if (transactionsState.transactions.isEmpty) {
+            return SizedBox(
+              height: mediaQuery.size.height / 1.5,
+              child: Center(
+                child: Text(
+                  appLocalization.theTransactionListIsEmpty,
+                  style: AppTextStyles.text17RegularBlackWithOpacity50,
+                ),
+              ),
+            );
+          }
+
           return ListView.separated(
             primary: false,
             itemCount: transactionsState.transactions.length,

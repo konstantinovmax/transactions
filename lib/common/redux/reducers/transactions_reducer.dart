@@ -45,9 +45,10 @@ TransactionsState _removeTransaction(
   TransactionsState state,
   RemoveTransaction action,
 ) {
+  final transactionIndex = state.transactions.indexOf(action.transaction);
+
   return TransactionsState(
     activeTab: state.activeTab,
-    transactions: List.from(state.transactions)
-      ..removeAt(action.transactionIndex),
+    transactions: List.from(state.transactions)..removeAt(transactionIndex),
   );
 }

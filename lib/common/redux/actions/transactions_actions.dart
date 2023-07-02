@@ -19,7 +19,7 @@ class AddTransaction {
 }
 
 class RemoveTransaction {
-  final int transactionIndex;
+  final Transaction transaction;
 
-  RemoveTransaction({required this.transactionIndex});
+  RemoveTransaction({required this.transaction});
 }

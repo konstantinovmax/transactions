@@ -10,5 +10,13 @@
   "withdrawal": "Withdrawal",
   "chart": "Chart",
   "total": "Total",
-  "totalTransactionsAmount": "Total transactions amount"
+  "totalTransactionsAmount": "Total transactions amount",
+  "transactionDetails": "Transaction details",
+  "cancelTransaction": "Cancel transaction",
+  "date": "Date",
+  "amount": "Amount",
+  "fee": "Fee",
+  "transactionNumber": "Transaction number",
+  "type": "Type",
+  "theTransactionListIsEmpty": "The transaction list is empty"
 }

@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:transactions/modules/main_module/models/transaction.dart';
 import 'package:transactions/modules/main_module/views/transaction_details/transaction_details_view.dart';
 
 class TransactionDetailsPage extends StatelessWidget {
-  const TransactionDetailsPage({super.key});
-
-  static Route route() {
+  static Route route(Transaction transaction) {
     return MaterialPageRoute<Widget>(
-      builder: (context) => const TransactionDetailsPage(),
+      builder: (context) => TransactionDetailsPage(transaction: transaction),
     );
   }
 
+  final Transaction transaction;
+
+  const TransactionDetailsPage({super.key, required this.transaction});
+
   @override
   Widget build(BuildContext context) {
-    return const TransactionDetailsView();
+    return TransactionDetailsView(transaction: transaction);
   }
 }

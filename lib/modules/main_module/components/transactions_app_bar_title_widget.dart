@@ -27,7 +27,7 @@ class TransactionsAppBarTitleWidget extends StatelessWidget {
               style: AppTextStyles.text15BoldBlackWithOpacity30,
             ),
             Text(
-              total.toStringAsFixed(2),
+              '${total.toStringAsFixed(2)} \$',
               style: AppTextStyles.text20BoldGreen,
             ),
           ],
