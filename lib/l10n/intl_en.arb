@@ -9,5 +9,6 @@
   "transfer": "Transfer",
   "withdrawal": "Withdrawal",
   "chart": "Chart",
-  "total": "Total"
+  "total": "Total",
+  "totalTransactionsAmount": "Total transactions amount"
 }

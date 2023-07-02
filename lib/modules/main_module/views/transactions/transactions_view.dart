@@ -42,7 +42,7 @@ class _TransactionsViewState extends State<TransactionsView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.grey,
+      backgroundColor: AppColors.lightGrey,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,

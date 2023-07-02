@@ -5,13 +5,19 @@ import 'package:transactions/common/utils/app_colors.dart';
 import 'package:transactions/common/utils/app_sizes.dart';
 import 'package:transactions/common/utils/app_text_styles.dart';
 import 'package:transactions/l10n/generated/l10n.dart';
+import 'package:transactions/modules/main_module/models/transaction.dart';
+import 'package:transactions/modules/main_module/models/transaction_type_info.dart';
 
 class TransactionsCardWidget extends StatelessWidget {
-  const TransactionsCardWidget({super.key});
+  final Transaction transaction;
+
+  const TransactionsCardWidget({super.key, required this.transaction});
 
   @override
   Widget build(BuildContext context) {
     final appLocalization = AppLocalization.of(context);
+    final transactionTypeInfo =
+        getTransactionTypeInfo(transaction.type, appLocalization);
 
     return InkWell(
       borderRadius: const BorderRadius.all(
@@ -26,7 +32,7 @@ class TransactionsCardWidget extends StatelessWidget {
             vertical: 10.0,
           ),
           decoration: BoxDecoration(
-            color: AppColors.lightGreen.withOpacity(0.1),
+            color: transactionTypeInfo.backgroundColor,
             borderRadius: const BorderRadius.all(
               Radius.circular(8.0),
             ),
@@ -41,11 +47,11 @@ class TransactionsCardWidget extends StatelessWidget {
                     height: 40.0,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: AppColors.lightGrey.withOpacity(0.25),
+                      color: AppColors.lightGrey.withOpacity(0.7),
                     ),
                     child: Center(
                       child: SvgPicture.asset(
-                        AppAssets.replenishmentIcon,
+                        transactionTypeInfo.icon,
                         colorFilter: ColorFilter.mode(
                           AppColors.black.withOpacity(0.3),
                           BlendMode.srcIn,
@@ -61,11 +67,11 @@ class TransactionsCardWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '# 1',
+                        transaction.number.toString(),
                         style: AppTextStyles.text15RegularGreen,
                       ),
                       Text(
-                        appLocalization.replenishment,
+                        transactionTypeInfo.transactionName,
                         style: AppTextStyles.text15RegularBlackWithOpacity30,
                       ),
                     ],
@@ -73,13 +79,49 @@ class TransactionsCardWidget extends StatelessWidget {
                 ],
               ),
               Text(
-                '10 000',
-                style: AppTextStyles.text17BoldGreen,
+                transaction.total.toString(),
+                style: transactionTypeInfo.amountTextStyle,
               ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  TransactionTypeInfo getTransactionTypeInfo(
+    TransactionType type,
+    AppLocalization appLocalization,
+  ) {
+    switch (type) {
+      case TransactionType.replenishment:
+        return TransactionTypeInfo(
+          backgroundColor: AppColors.lightGreen.withOpacity(0.1),
+          icon: AppAssets.replenishmentIcon,
+          transactionName: appLocalization.replenishment,
+          amountTextStyle: AppTextStyles.text17BoldGreen,
+        );
+      case TransactionType.withdrawal:
+        return TransactionTypeInfo(
+          backgroundColor: AppColors.red.withOpacity(0.03),
+          icon: AppAssets.withdrawalIcon,
+          transactionName: appLocalization.withdrawal,
+          amountTextStyle: AppTextStyles.text17BoldBlackWithOpacity50,
+        );
+      case TransactionType.transfer:
+        return TransactionTypeInfo(
+          backgroundColor: AppColors.yellow.withOpacity(0.05),
+          icon: AppAssets.transferIcon,
+          transactionName: appLocalization.transfer,
+          amountTextStyle: AppTextStyles.text17BoldBlackWithOpacity50,
+        );
+      default:
+        return TransactionTypeInfo(
+          backgroundColor: AppColors.yellow.withOpacity(0.05),
+          icon: AppAssets.transferIcon,
+          transactionName: appLocalization.transfer,
+          amountTextStyle: AppTextStyles.text17BoldBlackWithOpacity50,
+        );
+    }
   }
 }

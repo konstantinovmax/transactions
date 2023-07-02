@@ -31,6 +31,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "replenishment": MessageLookupByLibrary.simpleMessage("Replenishment"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
         "total": MessageLookupByLibrary.simpleMessage("Total"),
+        "totalTransactionsAmount":
+            MessageLookupByLibrary.simpleMessage("Total transactions amount"),
         "transactions": MessageLookupByLibrary.simpleMessage("Transactions"),
         "transfer": MessageLookupByLibrary.simpleMessage("Transfer"),
         "withdrawal": MessageLookupByLibrary.simpleMessage("Withdrawal")

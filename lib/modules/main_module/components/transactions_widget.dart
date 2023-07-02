@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:transactions/common/redux/states/app_state.dart';
+import 'package:transactions/common/redux/states/transactions_state.dart';
+import 'package:transactions/common/redux/store.dart';
+import 'package:transactions/common/utils/app_constants.dart';
+import 'package:transactions/common/utils/app_sizes.dart';
 import 'package:transactions/modules/main_module/components/transactions_card_widget.dart';
 
 class TransactionsWidget extends StatelessWidget {
@@ -6,12 +12,28 @@ class TransactionsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      padding: EdgeInsets.all(20.0),
-      child: Column(
-        children: [
-          TransactionsCardWidget(),
-        ],
+    final isPhone =
+        MediaQuery.of(context).size.width <= AppConstants.maxPhoneWidth;
+
+    return SingleChildScrollView(
+      padding: EdgeInsets.all(
+        isPhone ? AppConstants.phonePadding : AppConstants.tabletPadding,
+      ),
+      child: StoreConnector<AppState, TransactionsState>(
+        converter: (state) => store.state.transactionsState,
+        builder: (context, transactionsState) {
+          return ListView.separated(
+            primary: false,
+            itemCount: transactionsState.transactions.length,
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              return TransactionsCardWidget(
+                transaction: transactionsState.transactions[index],
+              );
+            },
+            separatorBuilder: (context, index) => AppSizes.sizedBoxH10,
+          );
+        },
       ),
     );
   }

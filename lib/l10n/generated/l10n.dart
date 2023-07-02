@@ -159,6 +159,16 @@ class AppLocalization {
       args: [],
     );
   }
+
+  /// `Total transactions amount`
+  String get totalTransactionsAmount {
+    return Intl.message(
+      'Total transactions amount',
+      name: 'totalTransactionsAmount',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {
