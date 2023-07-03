@@ -4,7 +4,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:transactions/common/components/app_input_widget.dart';
 import 'package:transactions/common/components/app_title_widget.dart';
-import 'package:transactions/common/redux/actions/auth_actions.dart';
+import 'package:transactions/common/redux/actions/auth_actions/auth_actions.dart';
 import 'package:transactions/common/redux/states/app_state.dart';
 import 'package:transactions/common/utils/app_constants.dart';
 import 'package:transactions/common/utils/app_sizes.dart';
@@ -20,6 +20,7 @@ class AuthFormWidget extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context);
     final isPhone = mediaQuery.size.width <= AppConstants.maxPhoneWidth;
     final storeProvider = StoreProvider.of<AppState>(context);
+    final requiredValidator = FormBuilderValidators.required<void>();
 
     return SizedBox(
       width: isPhone ? null : AppConstants.formWidthOnTablets,
@@ -44,7 +45,7 @@ class AuthFormWidget extends StatelessWidget {
               maxLines: 1,
               validator: FormBuilderValidators.compose([
                 FormBuilderValidators.email(),
-                FormBuilderValidators.required(),
+                requiredValidator,
               ]),
               autofocus: true,
               textInputAction: TextInputAction.next,
@@ -64,7 +65,7 @@ class AuthFormWidget extends StatelessWidget {
               maxLines: 1,
               validator: FormBuilderValidators.compose([
                 FormBuilderValidators.minLength(8),
-                FormBuilderValidators.required(),
+                requiredValidator,
               ]),
               textInputAction: TextInputAction.done,
             ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:transactions/common/redux/actions/transactions_actions.dart';
+import 'package:transactions/common/redux/actions/transactions_actions/transactions_actions.dart';
 import 'package:transactions/common/redux/states/app_state.dart';
 import 'package:transactions/common/redux/states/transactions_state.dart';
 import 'package:transactions/common/utils/app_colors.dart';

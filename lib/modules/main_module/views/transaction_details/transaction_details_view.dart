@@ -3,7 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:intl/intl.dart';
 import 'package:transactions/common/components/app_icon_button_widget.dart';
 import 'package:transactions/common/components/app_submit_button_widget.dart';
-import 'package:transactions/common/redux/actions/transactions_actions.dart';
+import 'package:transactions/common/redux/actions/transactions_actions/transactions_actions.dart';
 import 'package:transactions/common/redux/states/app_state.dart';
 import 'package:transactions/common/utils/app_assets.dart';
 import 'package:transactions/common/utils/app_colors.dart';
