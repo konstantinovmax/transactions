@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_annotating_with_dynamic
+
 import 'package:transactions/common/redux/reducers/auth_reducer.dart';
 import 'package:transactions/common/redux/reducers/transactions_reducer.dart';
 import 'package:transactions/common/redux/states/app_state.dart';

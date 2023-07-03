@@ -1,5 +1,5 @@
 import 'package:redux/redux.dart';
-import 'package:transactions/common/redux/actions/transactions_actions.dart';
+import 'package:transactions/common/redux/actions/transactions_actions/transactions_actions.dart';
 import 'package:transactions/common/redux/states/transactions_state.dart';
 
 final transactionsReducer = combineReducers<TransactionsState>([

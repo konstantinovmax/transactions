@@ -42,8 +42,11 @@ class TransactionsWidget extends StatelessWidget {
             itemCount: transactionsState.transactions.length,
             shrinkWrap: true,
             itemBuilder: (context, index) {
-              return TransactionsCardWidget(
-                transaction: transactionsState.transactions[index],
+              return SizedBox(
+                width: isPhone ? null : AppConstants.formWidthOnTablets,
+                child: TransactionsCardWidget(
+                  transaction: transactionsState.transactions[index],
+                ),
               );
             },
             separatorBuilder: (context, index) => AppSizes.sizedBoxH10,
