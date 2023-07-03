@@ -1,4 +1,4 @@
-# transactions
+# Transactions
 
 This is a Flutter demo project that showcases a list of transactions. The project utilizes Redux for its state management.
 
@@ -8,5 +8,7 @@ This is a Flutter demo project that showcases a list of transactions. The projec
 2. Navigate to the project directory `cd transactions`
 3. Fetch the project dependencies `flutter pub get`
 4. Run the app `flutter run`
+
+## Demo
 
 ![Project demo](./assets/example.gif)
