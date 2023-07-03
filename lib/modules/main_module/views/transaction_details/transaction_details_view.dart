@@ -41,6 +41,9 @@ class TransactionDetailsView extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
+        leadingWidth: isPhone
+            ? AppConstants.leadingWidthOnPhones
+            : AppConstants.leadingWidthOnTablets,
         elevation: 0.0,
         title: Text(
           appLocalization.transactionDetails,
