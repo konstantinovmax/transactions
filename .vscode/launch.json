@@ -6,20 +6,17 @@
   "configurations": [
     {
       "name": "transactions",
-      "program": "lib/app/main.dart",
       "request": "launch",
       "type": "dart"
     },
     {
       "name": "transactions (profile mode)",
-      "program": "lib/app/main.dart",
       "request": "launch",
       "type": "dart",
       "flutterMode": "profile"
     },
     {
       "name": "transactions (release mode)",
-      "program": "lib/app/main.dart",
       "request": "launch",
       "type": "dart",
       "flutterMode": "release"
